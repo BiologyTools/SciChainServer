@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RuntimeIdentifiers>linux-x64;linux-arm64;osx-x64;osx-arm64;win-x64;win-arm64;</RuntimeIdentifiers>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dotnet.Bundle" Version="0.9.13" />
+    <PackageReference Include="Packaging.Targets" Version="0.1.220">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SciChainLib\SciChainLib.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <CFBundleName>SciChain</CFBundleName>
+    <!-- Also defines .app file name -->
+    <CFBundleDisplayName>SciChain</CFBundleDisplayName>
+    <CFBundleIdentifier>com.SciChain</CFBundleIdentifier>
+    <CFBundleVersion>0.3.0</CFBundleVersion>
+    <CFBundlePackageType>APPL</CFBundlePackageType>
+    <CFBundleSignature>????</CFBundleSignature>
+    <CFBundleExecutable>SciChain</CFBundleExecutable>
+    <CFBundleIconFile>scichain.icns</CFBundleIconFile>
+    <CFBundleShortVersionString>0.3.0</CFBundleShortVersionString>
+    <!-- Will be copied from output directory -->
+    <NSPrincipalClass>NSApplication</NSPrincipalClass>
+    <NSHighResolutionCapable>true</NSHighResolutionCapable>
+  </PropertyGroup>
+</Project>
