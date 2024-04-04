@@ -53,10 +53,11 @@ namespace MyApp
         public static string ToHTML(Block bl)
         {
             string html = "";
-            html += "<a href=\"http://www.biologytools.net/" + (bl.Index + 1) + ".html\">Next Block</a>";
+            if (bl.Index != 0)
+                html += "<p><a href=\"http://www.biologytools.net/" + (bl.Index + 1) + ".html\">Next Block</a></p>";
             if(bl.Index > 0)
-            html += "<a href=\"http://www.biologytools.net/" + (bl.Index - 1) + ".html\">Previous Block</a>";
-            html = "<h1>Block: " + bl.Index + " Time:" + bl.TimeStamp.ToString() + " Hash: " + bl.Hash + "</h1>";
+                html += "<p><a href=\"http://www.biologytools.net/" + (bl.Index - 1) + ".html\">Previous Block</a></p>";
+            html += "<h1>Block: " + bl.Index + " Time:" + bl.TimeStamp.ToString() + " Hash: " + bl.Hash + "</h1>";
             if (bl.Transactions != null)
             {
                 html += "<h2>Transactions: " + bl.Transactions.Count + "</h2>";
